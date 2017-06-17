@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    private DBHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,5 +26,9 @@ public class MainActivity extends AppCompatActivity {
     public void switchTinder (View view){
         Intent intent = new Intent(MainActivity.this, Tinder.class);
         startActivity(intent);
+    }
+
+    public void importAllData(){
+
     }
 }
