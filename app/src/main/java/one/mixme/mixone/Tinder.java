@@ -20,4 +20,9 @@ public class Tinder extends AppCompatActivity {
         Intent intent = new Intent(Tinder.this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void goToRecipe(View view){
+        Intent intent = new Intent(Tinder.this, RecipeActivity.class);
+        startActivity(intent);
+    }
 }

@@ -7,9 +7,11 @@
     tools:context="one.mixme.mixone.RecipeActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,8 +46,8 @@
                 android:id="@+id/mediumMix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="mittel"
-                android:background="#ff9400"/>
+                android:background="#ff9400"
+                android:text="mittel" />
 
             <Button
                 android:id="@+id/hardMix"

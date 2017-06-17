@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MixOne</string>
+
+    <string-array name="countries_array">
+        <item>Afghanistan</item>
+        <item>Blbania</item>
+        <item>Clgeria</item>
+        <item>Cmerican Samoa</item>
+        <item>Endorra</item>
+        <item>Fngola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+
+    </string-array>
+
 </resources>
