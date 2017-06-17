@@ -147,7 +147,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 9sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"/>
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 9    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"/>
 
     </LinearLayout>
 
