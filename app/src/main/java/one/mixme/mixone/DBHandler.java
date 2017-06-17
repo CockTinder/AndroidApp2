@@ -1,6 +1,7 @@
 package one.mixme.mixone;
 
 import android.content.*;
+import android.database.Cursor;
 import android.database.sqlite.*;
 
 /**
@@ -17,7 +18,8 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String ZUTAT_TABLE_NAME = "zutat";
     private static final String ZUTAT_TABLE_CREATE = "CREATE TABLE " + ZUTAT_TABLE_NAME + " (" +
             "ZID INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "NAME TEXT);";
+            "NAME TEXT," +
+            "FARBCODE CHAR(6));";
     private static final String HAT_TABLE_NAME = "drinkhatzutat";
     private static final String HAT_TABLE_CREATE = "CREATE TABLE " + HAT_TABLE_NAME + " (" +
             "HID INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -29,6 +31,16 @@ public class DBHandler extends SQLiteOpenHelper {
     DBHandler(Context context){
         super(context, "mixone", null, DATABASE_VERSION);
     }
+
+    public int getCountZutaten(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM zutat", null);
+
+        int i = c.getCount();
+        return i; //todo
+    }
+
+
 
     public void addDrink(Drink drink){
         SQLiteDatabase db = this.getWritableDatabase();
