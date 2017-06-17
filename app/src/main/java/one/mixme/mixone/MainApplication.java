@@ -19,40 +19,34 @@ public class MainApplication extends Application {
         Cursor c2 = db.rawQuery("SELECT COUNT(*) FROM drinks", null);
         Cursor c3 = db.rawQuery("SELECT COUNT(*) FROM drinkhatzutat", null);
 
-        int a = c1.getInt(0);
-        int b = c2.getInt(0);
-        int c = c3.getInt(0);
+        final int a = c1.getInt(0);
+        final int b = c2.getInt(0);
+        final int c = c3.getInt(0);
 
-        if (a == 0 && b == 0&& c == 0)
-            importAllData();
-        else
-            importMissingData();
+        DownloadRunnable thread;
+        new Thread(thread = new DownloadRunnable() {
+            @Override
+            public void run() {
+                if (a == 0 && b == 0 && c == 0)
+                    importAllData();
+                else
+                    importMissingData();
+            }
+        }).start();
     }
 
     public DownloadRunnable importMissingData(){
-        DownloadRunnable thread;
-        new Thread(thread = new DownloadRunnable() {
-            @Override
-            public void run() {
-                //TODO get all last ids of all tables
-                //TODO compare to local last ids
-                //TODO Download missing data
-            }
-        }).start();
-        return thread;
+        //TODO get all last ids of all tables
+        //TODO compare to local last ids
+        //TODO Download missing data
+        return null;
     }
 
     public DownloadRunnable importAllData(){
-        DownloadRunnable thread;
-        new Thread(thread = new DownloadRunnable() {
-            @Override
-            public void run() {
-                //TODO get all ids of all tables
-                //TODO per id get the data
-                //TODO download image / store image in specific folder+ update reference
-                //TODO update status along
-            }
-        }).start();
-        return thread;
+        //TODO get all ids of all tables
+        //TODO per id get the data
+        //TODO download image / store image in specific folder+ update reference
+        //TODO update status along
+        return null;
     }
 }
