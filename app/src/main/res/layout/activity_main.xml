@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="To Tinder"
             android:onClick="switchTinder"
-            />
+            tools:ignore="HardcodedText" />
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
