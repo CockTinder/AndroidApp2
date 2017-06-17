@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new ChildItemPagerAdapter(viewPager));
     }
 
+    public void goToRecipe(View view){
+        Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
+        startActivity(intent);
+    }
+
     public void switchTinder (View view){
         Intent intent = new Intent(MainActivity.this, Tinder.class);
         startActivity(intent);
