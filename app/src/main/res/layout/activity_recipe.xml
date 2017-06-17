@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="one.mixme.mixone.RecipeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/lightMix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mild"
+                android:background="#00ff00"/>
+
+            <Button
+                android:id="@+id/mediumMix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mittel"
+                android:background="#ff9400"/>
+
+            <Button
+                android:id="@+id/hardMix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hart"
+                android:background="#ff0000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Für "/>
+
+            <EditText
+                android:id="@+id/quantityPersons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Person:"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/menge1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200ml"/>
+
+            <TextView
+                android:id="@+id/zutat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wodka"
+                android:background="#f423f0"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/menge2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150ml"/>
+
+            <TextView
+                android:id="@+id/zutat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orangensaft"
+                android:background="#ffe100"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/menge3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50ml"/>
+
+            <TextView
+                android:id="@+id/zutat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rum"
+                android:background="#ba5d00"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zubereitung:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 9sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
