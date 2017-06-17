@@ -37,6 +37,14 @@
 
 
         </android.support.v4.view.ViewPager>
+
+        <Button
+            android:id="@+id/swithToTinder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To Tinder"
+            android:onClick="switchTinder"
+            />
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
