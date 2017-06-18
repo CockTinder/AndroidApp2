@@ -8,7 +8,7 @@ import android.database.sqlite.*;
  * Created by laptop on 16.06.2017.
  */
 
-public class DBHandler extends SQLiteOpenHelper {
+public class  DBHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 2;
     private static final String DRINK_TABLE_NAME = "drinks";
     private static final String DRINK_TABLE_CREATE = "CREATE TABLE " + DRINK_TABLE_NAME + " (" +
@@ -34,10 +34,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public int getCountZutaten(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM zutat", null);
-
-        int i = c.getCount();
-        return i; //todo
+        Cursor c = db.rawQuery("SELECT COUNT(*) FROM zutat", null);
+        return c.getInt(0);
     }
 
 
@@ -58,6 +56,7 @@ public class DBHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put("NAME", zutat.getName());
+        values.put("FARBCODE", "ff0000");
 
         db.insert("zutat", null, values);
         db.close();

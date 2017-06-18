@@ -33,6 +33,12 @@ public class MainApplication extends Application {
                     importMissingData();
             }
         }).start();
+
+        dbHandler.addZutat(new Zutat("wodka"));
+        dbHandler.addZutat(new Zutat("banane"));
+        dbHandler.addZutat(new Zutat("ananas"));
+        dbHandler.addZutat(new Zutat("melone"));
+        dbHandler.addZutat(new Zutat("cola"));
     }
 
     public DownloadRunnable importMissingData(){

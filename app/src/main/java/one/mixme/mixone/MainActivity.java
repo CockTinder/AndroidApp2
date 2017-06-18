@@ -37,22 +37,22 @@ public class MainActivity extends AppCompatActivity {
         textView.setAdapter(adapter);
 
         LinearLayout avItems = (LinearLayout) findViewById(R.id.availableItems);
-
         dbHandler = new DBHandler(this);
 
-        dbHandler.addZutat(new Zutat("wodka"));
-        dbHandler.addZutat(new Zutat("banane"));
-        dbHandler.addZutat(new Zutat("ananas"));
-        dbHandler.addZutat(new Zutat("melone"));
-        dbHandler.addZutat(new Zutat("cola"));
-
         SQLiteDatabase db = dbHandler.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT name FROM zutat", null);
 
-        for (int i = 0; i < 5; i++){ //dbHandler.getCountZutaten()
+        //String array[] = new String[cursor.getCount()];
+        //int i = 0;
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
             TextView tv = new TextView(this);
-            String s = db.rawQuery("SELECT name FROM zutat WHERE ZID =" + i, null).getString(0);
-            tv.setText(s);
+            tv.setText(cursor.getString(0));
             avItems.addView(tv);
+            //array[i] = cursor.getString(0);
+            //i++;
+            cursor.moveToNext();
         }
     }
 
