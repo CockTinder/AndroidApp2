@@ -42,18 +42,26 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHandler.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT name FROM zutat", null);
 
-        //String array[] = new String[cursor.getCount()];
-        //int i = 0;
-
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            TextView tv = new TextView(this);
+            final TextView tv = new TextView(this);
             tv.setText(cursor.getString(0));
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    addTextView(view);
+                }
+            });
             avItems.addView(tv);
-            //array[i] = cursor.getString(0);
-            //i++;
             cursor.moveToNext();
         }
+    }
+
+    public void addTextView(View tv){
+        LinearLayout adItems = (LinearLayout) findViewById(R.id.addedItems);
+        LinearLayout avItems = (LinearLayout) findViewById(R.id.availableItems);
+        avItems.removeView(tv);
+        adItems.addView(tv);
     }
 
     public void goToRecipe(View view){
@@ -63,6 +71,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void switchTinder (View view){
         Intent intent = new Intent(MainActivity.this, Tinder.class);
+        LinearLayout adItems = (LinearLayout) findViewById(R.id.addedItems);
+
+        String[] zutaten;
+
+        //intent.putExtra("zutaten", zutaten);
+
         startActivity(intent);
     }
 }
