@@ -49,11 +49,12 @@ public class Tinder extends AppCompatActivity {
 
             LinearLayout linearLayout = new LinearLayout(this);
             linearLayout.setId(i);
+            linearLayout.setPadding(50, 0, 50, 0);
             linearLayout.setOrientation(LinearLayout.VERTICAL);
             linearLayout.setBackgroundResource(R.drawable.roundcorners);
 
             ImageView img = new ImageView(this);
-            img.setImageResource(Integer.parseInt("R.drawable."+cursor2.getString(1)));
+            img.setImageResource(getResources().getIdentifier(bild_name[i], "drawable", this.getPackageName()));
             linearLayout.addView(img);
 
             TextView tv = new TextView(this);
