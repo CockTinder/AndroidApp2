@@ -73,9 +73,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Tinder.class);
         LinearLayout adItems = (LinearLayout) findViewById(R.id.addedItems);
 
-        String[] zutaten;
+        int count = adItems.getChildCount();
+        String[] zutaten = new String[count];
+        for (int i = 0; i < count; i++) {
+            TextView v = (TextView) adItems.getChildAt(i);
+            zutaten[i] = v.getText().toString();
+        }
 
-        //intent.putExtra("zutaten", zutaten);
+        intent.putExtra("zutaten", zutaten);
 
         startActivity(intent);
     }
