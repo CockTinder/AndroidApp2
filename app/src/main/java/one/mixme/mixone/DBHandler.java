@@ -13,20 +13,20 @@ public class  DBHandler extends SQLiteOpenHelper {
     private static final String DRINK_TABLE_NAME = "drinks";
     private static final String DRINK_TABLE_CREATE = "CREATE TABLE " + DRINK_TABLE_NAME + " (" +
             "DID INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "BILD_URL CHAR(50)," +
-            "NAME TEXT);";
+            "bild_name CHAR(50)," +
+            "name TEXT);";
     private static final String ZUTAT_TABLE_NAME = "zutat";
     private static final String ZUTAT_TABLE_CREATE = "CREATE TABLE " + ZUTAT_TABLE_NAME + " (" +
             "ZID INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "NAME TEXT," +
-            "FARBCODE CHAR(6));";
+            "name TEXT," +
+            "farbcode CHAR(6));";
     private static final String HAT_TABLE_NAME = "drinkhatzutat";
     private static final String HAT_TABLE_CREATE = "CREATE TABLE " + HAT_TABLE_NAME + " (" +
             "HID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "DID INTEGER," +
             "ZID INTEGER," +
-            "STAERKE CHAR(6)," +
-            "VERHAELTNIS INTEGER);";
+            "staerke CHAR(6)," +
+            "verhaeltnis INTEGER);";
 
     DBHandler(Context context){
         super(context, "mixone", null, DATABASE_VERSION);
