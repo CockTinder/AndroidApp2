@@ -37,8 +37,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
->
+        android:layout_height="400dp">
         <!--
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -60,8 +59,8 @@
                 android:paddingRight="50dp"
                 android:paddingTop="0dp"
                 android:onClick="goToRecipe"
-                android:orientation="vertical"
-                android:background="@drawable/roundcorners">
+                android:orientation="vertical">
+                <!-- android:background="@drawable/roundcorners" -->
 
                 <ImageView
                     android:id="@+id/imageView"
